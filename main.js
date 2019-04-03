@@ -8,13 +8,13 @@ function attackRound(event) {
     event.preventDefault();
     
     if (monster.isAlive === false) {
-        monster.respawn();
-        player.levelUp();
+        player.expUp(monster);
+        monster.respawn(player);
         updateLevel();
-    }
-    
-    if (player.isAlive === true) {
-        player.fight(monster)
+    } else {
+        if (player.isAlive === true) {
+            player.fight(monster)
+        }
     }
     
     updateHtml();
@@ -71,4 +71,10 @@ function updateResult() {
 
 function updateLevel() {
     document.querySelector('#level-number').innerText = player.level;
+    document.querySelector('#exp-number').innerText = player.expNeeded - player.experience;
+
+    document.querySelector('#monster-level').innerText = monster.level;
+
+
 }
+
