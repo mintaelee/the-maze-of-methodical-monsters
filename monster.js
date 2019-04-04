@@ -11,7 +11,7 @@ const monster = {
 
     calculateRawDamage(){
         let rawDamage = Math.ceil(Math.random()*this.currentAttackDamage);
-        return rawDamage + 1;
+        return rawDamage + 2;
     },
 
     takeDamage(rawDamage) {

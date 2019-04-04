@@ -10,7 +10,7 @@ const boss = {
 
     calculateRawDamage(){
         let rawDamage = Math.ceil(Math.random()*this.baseAttackDamage);
-        return rawDamage + 1;
+        return rawDamage + 2;
     },
 
     takeDamage(rawDamage) {

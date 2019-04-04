@@ -41,7 +41,7 @@ const player = {
         this.level ++;
         this.hitPoints = 100;
         this.expNeeded = this.expNeeded + 50*(this.level-1);
-        this.baseAttackDamge = Math.floor(this.baseAttackDamage * 1.5);
+        this.baseAttackDamage = Math.floor(this.baseAttackDamage * 1.2);
     }
 
 }
