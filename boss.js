@@ -1,16 +1,15 @@
-const monster = {
-    maxHitPoints : 30,
-    hitPoints: 30,
-    expGiven: 30,
+const boss = {
+    maxHitPoints : 50,
+    hitPoints: 50,
+    expGiven: 50,
     level : 1,
     maxLevel: 1,
     isAlive: true,
     lastDamageTaken : 0,
-    currentAttackDamage: 5,
-    baseAttackDamage: 5,
+    baseAttackDamage: 10,
 
     calculateRawDamage(){
-        let rawDamage = Math.ceil(Math.random()*this.currentAttackDamage);
+        let rawDamage = Math.ceil(Math.random()*this.baseAttackDamage);
         return rawDamage + 1;
     },
 
@@ -46,6 +45,6 @@ const monster = {
     randomLevel() {
         this.level = Math.ceil(Math.random()*this.maxLevel);
         this.maxHitPoints = 30 + 10*(this.level-1);
-        this.currentAttackDamage = Math.floor(this.baseAttackDamage * Math.pow(1.2, this.level-1));
+        this.baseAttackDamage = Math.floor(this.baseAttackDamage * Math.pow(1.2, this.level-1))
     }
 };
